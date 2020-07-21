@@ -1,17 +1,20 @@
-
-bool bpmokfun(float bpm){
-  return(bpm<70|| bpm>150);
+bool IsInRange(float Value, float MinVal, float MaxVal){
+   return(Value<MinVal||Value>MaxVal); 
 }
 
-bool spo2fun(float spo2){
-  return(spo2<80);
+bool IsbpmOk(float bpm){
+  return(IsInRange(bpm,70,150));
 }
 
-bool respRatefun(float respRate){
-  return(respRate<30|| respRate>60); 
+bool Isspo2InRange(float spo2){
+  return(IsInRange(spo2,80,100));
+}
+
+bool IsrespRateinRange(float respRate){
+  return(IsInRange(respRate,30,60); 
 }
 
 
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  return (bpmokfun(bpm)||spo2fun(spo2)||respRatefun(respRate));
+  return (IsbpmOk(bpm)||Isspo2InRange(spo2)||IsrespRateinRange(respRate));
 }
