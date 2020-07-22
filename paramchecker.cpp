@@ -1,5 +1,9 @@
 #define Minbpm 70
 #define Maxbpm 150
+#define MinSpo 80
+#define MaxSpo 100
+#define MinRespRate 30
+#define MaxRespRate 60
 
 bool IsInRange(float Value, int MinVal, int MaxVal)
 {
@@ -9,5 +13,5 @@ bool IsInRange(float Value, int MinVal, int MaxVal)
 
 bool vitalsAreOk(float bpm, float spo2, float respRate) 
 {
-  return ((IsInRange(bpm,Minbpm,Maxbpm))||(IsInRange(spo2,80,100))||(IsInRange(respRate,30,60)));
+  return ((IsInRange(bpm,Minbpm,Maxbpm))||(IsInRange(spo2,MinSpo,MaxSpo))||(IsInRange(respRate,MinRespRate,MaxRespRate)));
 }
