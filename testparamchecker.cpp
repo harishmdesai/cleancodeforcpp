@@ -13,10 +13,6 @@ TEST(VitalsTest, SPO2) {
 TEST(VitalsTest, RespRate) {
     ASSERT_EQ(false, vitalsAreOk(100, 90, 70));
 }
-
-TEST(VitalsTest, Pass) {
-    ASSERT_EQ(true, vitalsAreOk(100, 90, 50));
-}
  
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
